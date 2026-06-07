@@ -6,7 +6,12 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import { CaptionLabel } from "@/components/CaptionLabel";
 import { mdxComponents } from "@/components/MDXComponents";
 import { StatusBadge } from "@/components/StatusBadge";
-import { getAdjacentWork, getAllWork, getWorkBySlug } from "@/lib/content";
+import {
+  getAdjacentWork,
+  getAllWork,
+  getWorkBySlug,
+  type WorkItem,
+} from "@/lib/content";
 
 type WorkDetailProps = {
   params: Promise<{ slug: string }>;
@@ -32,6 +37,7 @@ export default async function WorkDetailPage({ params }: WorkDetailProps) {
   const item = getWorkBySlug(slug);
   if (!item) notFound();
   const { previous, next } = getAdjacentWork(slug);
+  const liveLink = getLiveLink(item);
 
   return (
     <main className="page-shell enter-soft pt-[calc(var(--header-height)+56px)]">
@@ -108,6 +114,47 @@ export default async function WorkDetailPage({ params }: WorkDetailProps) {
           </section>
         ) : null}
 
+        {liveLink ? (
+          <section className="grid gap-8 border-b border-line py-8 md:grid-cols-[160px_1fr]">
+            <CaptionLabel>LIVE / EMBED</CaptionLabel>
+            <div className="overflow-hidden border border-line bg-paper-strong">
+              <div className="flex min-h-12 items-center justify-between gap-4 border-b border-line px-3 py-2">
+                <div
+                  aria-hidden="true"
+                  className="flex shrink-0 items-center gap-1.5"
+                >
+                  <span className="h-2.5 w-2.5 rounded-full bg-signal-red" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-signal-yellow" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-signal-blue" />
+                </div>
+                <p className="min-w-0 truncate border border-line bg-paper px-3 py-1 text-xs font-black text-ink-soft">
+                  {liveLink.url}
+                </p>
+                <a
+                  href={liveLink.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="shrink-0 border border-line bg-ink px-3 py-1.5 text-xs font-black text-paper hover:bg-signal-red"
+                >
+                  OPEN
+                </a>
+              </div>
+              <div className="relative aspect-[16/10] bg-paper">
+                <iframe
+                  src={liveLink.url}
+                  title={`${item.title} live preview`}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                  allowFullScreen
+                  className="h-full w-full border-0"
+                />
+              </div>
+            </div>
+          </section>
+        ) : null}
+
         <section className="mx-auto max-w-[760px] py-12">
           <div className="prose-hyperreal">
             <MDXRemote source={item.body} components={mdxComponents} />
@@ -121,6 +168,10 @@ export default async function WorkDetailPage({ params }: WorkDetailProps) {
       </nav>
     </main>
   );
+}
+
+function getLiveLink(item: WorkItem) {
+  return item.links.find((link) => link.label.toLowerCase() === "live");
 }
 
 function MetaBlock({ label, values }: { label: string; values: string[] }) {
