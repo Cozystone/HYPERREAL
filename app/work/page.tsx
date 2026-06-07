@@ -26,7 +26,13 @@ function normalizeTags(value: string | string[] | undefined) {
 }
 
 function normalizeStatus(value: string | undefined): WorkStatus | "all" {
-  if (value === "done" || value === "in-progress" || value === "experiment") {
+  if (
+    value === "done" ||
+    value === "in-progress" ||
+    value === "mvp" ||
+    value === "prototype" ||
+    value === "experiment"
+  ) {
     return value;
   }
   return "all";

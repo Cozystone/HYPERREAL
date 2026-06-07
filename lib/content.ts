@@ -3,7 +3,12 @@ import path from "node:path";
 import { cache } from "react";
 import matter from "gray-matter";
 
-export type WorkStatus = "done" | "in-progress" | "experiment";
+export type WorkStatus =
+  | "done"
+  | "in-progress"
+  | "mvp"
+  | "prototype"
+  | "experiment";
 
 export type WorkLink = {
   label: string;
@@ -58,7 +63,13 @@ function asStringArray(value: unknown) {
 }
 
 function asWorkStatus(value: unknown): WorkStatus {
-  if (value === "done" || value === "in-progress" || value === "experiment") {
+  if (
+    value === "done" ||
+    value === "in-progress" ||
+    value === "mvp" ||
+    value === "prototype" ||
+    value === "experiment"
+  ) {
     return value;
   }
   return "experiment";

@@ -14,6 +14,8 @@ const statuses: Array<{ value: WorkStatus | "all"; label: string }> = [
   { value: "all", label: "전체" },
   { value: "done", label: statusLabels.done },
   { value: "in-progress", label: statusLabels["in-progress"] },
+  { value: "mvp", label: statusLabels.mvp },
+  { value: "prototype", label: statusLabels.prototype },
   { value: "experiment", label: statusLabels.experiment },
 ];
 
