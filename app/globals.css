@@ -14,6 +14,31 @@
   --font-helvetica: Helvetica, "Helvetica Neue", Arial, sans-serif;
 }
 
+@media (min-width: 1440px) {
+  :root {
+    --max-page: 1440px;
+  }
+}
+
+@media (min-width: 1680px) {
+  :root {
+    --header-height: 84px;
+    --max-page: 1600px;
+  }
+}
+
+@media (min-width: 1920px) {
+  :root {
+    --max-page: 1800px;
+  }
+}
+
+@media (min-width: 2240px) {
+  :root {
+    --max-page: 2040px;
+  }
+}
+
 @theme inline {
   --color-paper: var(--paper);
   --color-paper-strong: var(--paper-strong);
@@ -185,6 +210,32 @@ a {
   overflow-wrap: anywhere;
 }
 
+.work-grid {
+  align-items: stretch;
+}
+
+.work-card-copy {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  text-wrap: pretty;
+}
+
+@media (min-width: 768px) {
+  .work-card {
+    min-height: 420px;
+  }
+
+  .work-card-title {
+    font-size: 2.15rem;
+    line-height: 0.98;
+  }
+
+  .work-card-copy {
+    font-size: 0.98rem;
+    line-height: 1.78;
+  }
+}
+
 .bg-paper {
   background-color: var(--paper);
 }
@@ -254,7 +305,7 @@ a {
 
 .cover-wordmark-image {
   display: block;
-  width: min(31vw, 40rem);
+  width: clamp(24rem, 36vw, 62rem);
   min-width: 24rem;
   height: auto;
   user-select: none;
@@ -265,7 +316,7 @@ a {
   z-index: 1;
   bottom: 0;
   right: 0;
-  width: min(clamp(30rem, 43vw, 62rem), calc(100vw - 1.5rem));
+  width: min(clamp(30rem, 48vw, 82rem), calc(100vw - 1.5rem));
   aspect-ratio: 1978 / 1544;
 }
 
@@ -464,6 +515,138 @@ a {
   .prose-hyperreal.work-detail-prose li {
     font-size: 1.125rem;
     line-height: 1.92;
+  }
+}
+
+@media (min-width: 1440px) {
+  .page-main {
+    padding-top: calc(var(--header-height) + 64px);
+  }
+
+  .site-header-shell {
+    gap: 1.25rem;
+  }
+
+  .site-nav {
+    gap: 0.75rem;
+    font-size: 0.95rem;
+  }
+
+  .site-header--home .site-nav {
+    gap: 2.5rem;
+  }
+
+  .responsive-title {
+    font-size: 5.25rem;
+  }
+
+  .fluid-copy {
+    max-width: 50rem;
+    font-size: 1.15rem;
+    line-height: 1.9;
+  }
+
+  .caption-label {
+    font-size: 12px;
+  }
+
+  .work-grid {
+    gap: 1.5rem;
+  }
+
+  .filter-bar {
+    grid-template-columns: 180px 1fr;
+    gap: 1.5rem;
+    padding-block: 1.5rem;
+  }
+
+  .filter-chip {
+    min-height: 2.75rem;
+    padding: 0.65rem 0.9rem;
+    font-size: 0.95rem;
+  }
+
+  .work-card {
+    min-height: 460px;
+  }
+
+  .work-card-body {
+    padding: 1.5rem;
+  }
+
+  .work-card-title {
+    font-size: 2.55rem;
+    line-height: 0.96;
+  }
+
+  .work-card-copy {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .work-card .text-xs {
+    font-size: 0.8125rem;
+  }
+}
+
+@media (min-width: 1920px) {
+  .site-nav {
+    gap: 0.9rem;
+    font-size: 1.05rem;
+  }
+
+  .site-header--home .site-nav {
+    gap: 3rem;
+  }
+
+  .responsive-title {
+    font-size: 5.9rem;
+  }
+
+  .fluid-copy {
+    max-width: 56rem;
+    font-size: 1.25rem;
+  }
+
+  .caption-label {
+    font-size: 13px;
+  }
+
+  .work-grid {
+    gap: 2rem;
+  }
+
+  .filter-bar {
+    grid-template-columns: 210px 1fr;
+    gap: 2rem;
+    padding-block: 1.75rem;
+  }
+
+  .filter-chip {
+    min-height: 3rem;
+    padding: 0.75rem 1rem;
+    font-size: 1.05rem;
+  }
+
+  .work-card {
+    min-height: 540px;
+  }
+
+  .work-card-body {
+    padding: 2rem;
+  }
+
+  .work-card-title {
+    font-size: 3rem;
+  }
+
+  .work-card-copy {
+    font-size: 1.125rem;
+    line-height: 1.9;
+  }
+
+  .work-card .text-xs {
+    font-size: 0.875rem;
   }
 }
 

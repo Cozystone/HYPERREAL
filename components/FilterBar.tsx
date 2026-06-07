@@ -43,7 +43,7 @@ export function FilterBar({
   const hasActiveFilter = activeStatus !== "all" || activeTags.length > 0;
 
   return (
-    <section className="grid gap-4 border-y border-line py-4 md:grid-cols-[160px_1fr] md:gap-5 md:py-5">
+    <section className="filter-bar grid gap-4 border-y border-line py-4 md:grid-cols-[160px_1fr] md:gap-5 md:py-5">
       <div className="flex items-baseline justify-between gap-4 md:block">
         <p className="caption-label">FILTER / INDEX</p>
         <p className="mt-2 text-sm font-black">
@@ -59,7 +59,7 @@ export function FilterBar({
                 key={status.value}
                 href={hrefFor(status.value, activeTags)}
                 aria-current={active ? "page" : undefined}
-                className={`inline-flex min-h-10 items-center border border-line px-3 py-2 text-sm font-black ${
+                className={`filter-chip inline-flex min-h-10 items-center border border-line px-3 py-2 text-sm font-black ${
                   active ? "bg-signal-blue text-paper" : "bg-paper hover:bg-ink hover:text-paper"
                 }`}
               >
@@ -70,7 +70,7 @@ export function FilterBar({
           {hasActiveFilter ? (
             <Link
               href="/work"
-              className="inline-flex min-h-10 items-center border border-line px-3 py-2 text-sm font-black hover:bg-ink hover:text-paper"
+              className="filter-chip inline-flex min-h-10 items-center border border-line px-3 py-2 text-sm font-black hover:bg-ink hover:text-paper"
             >
               RESET
             </Link>
@@ -84,7 +84,7 @@ export function FilterBar({
                 <Link
                   key={tag}
                   href={hrefFor(activeStatus, toggleTag(activeTags, tag))}
-                  className={`inline-flex min-h-10 items-center border border-line px-3 py-2 text-sm font-bold ${
+                  className={`filter-chip inline-flex min-h-10 items-center border border-line px-3 py-2 text-sm font-bold ${
                     active
                       ? "bg-signal-yellow text-ink"
                       : "bg-paper hover:bg-ink hover:text-paper"

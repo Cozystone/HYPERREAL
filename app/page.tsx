@@ -27,7 +27,7 @@ export default function Home() {
             width={1320}
             height={260}
             priority
-            sizes="(max-width: 760px) 88vw, 31vw"
+            sizes="(max-width: 760px) 88vw, 36vw"
             className="cover-wordmark-image"
           />
         </div>
@@ -37,7 +37,7 @@ export default function Home() {
             alt=""
             fill
             priority
-            sizes="(max-width: 760px) 115vw, 58vw"
+            sizes="(max-width: 760px) 115vw, 64vw"
             className="cover-art-image"
           />
         </div>
@@ -65,7 +65,7 @@ export default function Home() {
             title="Selected Work"
             intro="완성, 진행 중, 실험을 같은 아카이브 질서로 정리한 프로젝트 기록."
           />
-          <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          <div className="work-grid mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
             {featuredWork.map((item) => (
               <WorkCard key={item.slug} item={item} />
             ))}

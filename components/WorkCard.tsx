@@ -10,7 +10,7 @@ type WorkCardProps = {
 
 export function WorkCard({ item }: WorkCardProps) {
   return (
-    <article className="draft-card group flex min-h-[360px] overflow-hidden sm:min-h-[400px]">
+    <article className="work-card draft-card group flex min-h-[360px] overflow-hidden sm:min-h-[400px]">
       <Link
         href={`/work/${item.slug}`}
         className="flex h-full w-full flex-col"
@@ -22,7 +22,7 @@ export function WorkCard({ item }: WorkCardProps) {
               src={item.cover}
               alt={`${item.title} project cover`}
               fill
-              sizes="(min-width: 1280px) 25vw, (min-width: 768px) 50vw, 100vw"
+              sizes="(min-width: 1536px) 34vw, (min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
               className="object-cover transition-transform duration-200 group-hover:scale-[1.02]"
             />
           ) : (
@@ -35,14 +35,14 @@ export function WorkCard({ item }: WorkCardProps) {
             </div>
           )}
         </div>
-        <div className="flex flex-1 flex-col p-4 sm:p-5">
+        <div className="work-card-body flex flex-1 flex-col p-4 sm:p-5">
           <CaptionLabel>
             {item.code} / {item.title}
           </CaptionLabel>
           <h2 className="work-card-title wordmark mt-4 text-2xl leading-none md:mt-5 md:text-3xl">
             {item.title}
           </h2>
-          <p className="mt-3 line-clamp-3 text-sm leading-7 text-ink-soft sm:mt-4">
+          <p className="work-card-copy mt-3 line-clamp-3 text-sm leading-7 text-ink-soft sm:mt-4">
             {item.summary}
           </p>
           <div className="mt-5 flex flex-wrap gap-2 sm:mt-6">
