@@ -18,9 +18,18 @@ export default function Home() {
         aria-labelledby="cover-title"
       >
         <div className="cover-title-zone">
-          <h1 id="cover-title" className="cover-wordmark">
+          <h1 id="cover-title" className="sr-only">
             HYPERREAL
           </h1>
+          <Image
+            src="/images/cover-wordmark.webp"
+            alt=""
+            width={1320}
+            height={260}
+            priority
+            sizes="(max-width: 760px) 88vw, 31vw"
+            className="cover-wordmark-image"
+          />
         </div>
         <div className="cover-art-region" aria-hidden="true">
           <Image

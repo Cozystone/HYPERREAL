@@ -155,20 +155,20 @@ a {
   pointer-events: none;
 }
 
-.cover-wordmark {
-  font-family: var(--font-helvetica);
-  font-size: clamp(4.25rem, 6.8vw, 8rem);
-  font-weight: 900;
-  line-height: 0.85;
-  letter-spacing: 0;
+.cover-wordmark-image {
+  display: block;
+  width: min(31vw, 40rem);
+  min-width: 24rem;
+  height: auto;
+  user-select: none;
 }
 
 .cover-art-region {
   position: absolute;
   z-index: 1;
   bottom: 0;
-  left: calc(50% + clamp(7rem, 13vw, 18rem));
-  width: clamp(42rem, 55vw, 88rem);
+  right: 0;
+  width: min(clamp(30rem, 43vw, 62rem), calc(100vw - 1.5rem));
   aspect-ratio: 1978 / 1544;
 }
 
@@ -338,14 +338,16 @@ a {
     padding-bottom: 30svh;
   }
 
-  .cover-wordmark {
-    font-size: clamp(3rem, 13vw, 4.75rem);
+  .cover-wordmark-image {
+    width: min(88vw, 24rem);
+    min-width: 0;
   }
 
   .cover-art-region {
     bottom: 0;
-    left: 6vw;
-    width: 118vw;
+    left: 0.75rem;
+    right: auto;
+    width: min(calc(100vw - 1.5rem), 38rem);
   }
 }
 
