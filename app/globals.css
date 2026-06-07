@@ -417,6 +417,56 @@ a {
   border: 1px solid var(--line);
 }
 
+.work-detail-body {
+  width: min(100%, 860px);
+}
+
+.prose-hyperreal.work-detail-prose :where(h1, h2, h3, p, li) {
+  text-wrap: pretty;
+}
+
+.prose-hyperreal.work-detail-prose h1 {
+  font-size: 3.75rem;
+}
+
+.prose-hyperreal.work-detail-prose h2 {
+  font-size: 2.55rem;
+}
+
+.prose-hyperreal.work-detail-prose h3 {
+  font-size: 1.5rem;
+}
+
+.prose-hyperreal.work-detail-prose p,
+.prose-hyperreal.work-detail-prose li {
+  font-size: 1.05rem;
+  line-height: 1.86;
+}
+
+@media (min-width: 1024px) {
+  .work-detail-body {
+    width: min(100%, 920px);
+  }
+
+  .prose-hyperreal.work-detail-prose h1 {
+    font-size: 4.25rem;
+  }
+
+  .prose-hyperreal.work-detail-prose h2 {
+    font-size: 2.85rem;
+  }
+
+  .prose-hyperreal.work-detail-prose h3 {
+    font-size: 1.65rem;
+  }
+
+  .prose-hyperreal.work-detail-prose p,
+  .prose-hyperreal.work-detail-prose li {
+    font-size: 1.125rem;
+    line-height: 1.92;
+  }
+}
+
 @media (max-width: 760px) {
   :root {
     --header-height: 94px;
@@ -527,6 +577,28 @@ a {
     font-size: 0.97rem;
     line-height: 1.75;
   }
+
+  .work-detail-body {
+    width: 100%;
+  }
+
+  .prose-hyperreal.work-detail-prose h1 {
+    font-size: 2.65rem;
+  }
+
+  .prose-hyperreal.work-detail-prose h2 {
+    font-size: 2.1rem;
+  }
+
+  .prose-hyperreal.work-detail-prose h3 {
+    font-size: 1.3rem;
+  }
+
+  .prose-hyperreal.work-detail-prose p,
+  .prose-hyperreal.work-detail-prose li {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
 }
 
 @media (max-width: 380px) {
@@ -536,6 +608,14 @@ a {
 
   .responsive-title {
     font-size: 2.35rem;
+  }
+
+  .prose-hyperreal.work-detail-prose h1 {
+    font-size: 2.35rem;
+  }
+
+  .prose-hyperreal.work-detail-prose h2 {
+    font-size: 1.85rem;
   }
 }
 

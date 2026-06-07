@@ -117,9 +117,19 @@ export default async function WorkDetailPage({ params }: WorkDetailProps) {
         {liveLink ? (
           <section
             id="live-embed"
-            className="grid scroll-mt-[calc(var(--header-height)+24px)] gap-5 border-b border-line py-7 md:grid-cols-[160px_1fr] md:gap-8 md:py-8"
+            className="scroll-mt-[calc(var(--header-height)+24px)] border-b border-line py-7 md:py-8"
           >
-            <CaptionLabel>LIVE / EMBED</CaptionLabel>
+            <div className="mb-4 flex items-center justify-between gap-4">
+              <CaptionLabel>LIVE / EMBED</CaptionLabel>
+              <a
+                href={liveLink.url}
+                target="_blank"
+                rel="noreferrer"
+                className="border border-line bg-ink px-3 py-1.5 text-xs font-black text-paper hover:bg-signal-red"
+              >
+                OPEN LIVE
+              </a>
+            </div>
             <div className="overflow-hidden border border-line bg-paper-strong">
               <div className="flex min-h-12 items-center justify-between gap-2 border-b border-line px-3 py-2 sm:gap-4">
                 <div
@@ -133,16 +143,8 @@ export default async function WorkDetailPage({ params }: WorkDetailProps) {
                 <p className="hidden min-w-0 truncate border border-line bg-paper px-3 py-1 text-xs font-black text-ink-soft sm:block">
                   {liveLink.url}
                 </p>
-                <a
-                  href={liveLink.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="shrink-0 border border-line bg-ink px-3 py-1.5 text-xs font-black text-paper hover:bg-signal-red"
-                >
-                  OPEN
-                </a>
               </div>
-              <div className="relative aspect-[9/12] min-h-[420px] bg-paper sm:aspect-[16/10] sm:min-h-0">
+              <div className="relative h-[520px] max-h-[72svh] bg-paper sm:aspect-[16/10] sm:h-auto sm:max-h-none">
                 <iframe
                   src={liveLink.url}
                   title={`${item.title} live preview`}
@@ -157,8 +159,8 @@ export default async function WorkDetailPage({ params }: WorkDetailProps) {
           </section>
         ) : null}
 
-        <section className="mx-auto max-w-[760px] py-9 md:py-12">
-          <div className="prose-hyperreal">
+        <section className="work-detail-body mx-auto py-9 md:py-12">
+          <div className="prose-hyperreal work-detail-prose">
             <MDXRemote source={item.body} components={mdxComponents} />
           </div>
         </section>
