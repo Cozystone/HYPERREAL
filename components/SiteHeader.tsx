@@ -25,25 +25,17 @@ export function SiteHeader() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 ${
-        isHome ? "bg-transparent" : "border-b border-line bg-paper/95"
-      }`}
+      className={`site-header ${isHome ? "site-header--home" : "site-header--page"}`}
     >
-      <div
-        className={`page-shell flex h-[var(--header-height)] items-center gap-4 ${
-          isHome ? "justify-end" : "justify-between"
-        }`}
-      >
+      <div className="page-shell site-header-shell">
         {isHome ? null : (
-          <div className="flex min-w-0 flex-col gap-2">
+          <div className="site-brand">
             <CaptionLabel>PORTFOLIO / {section}</CaptionLabel>
             <Wordmark />
           </div>
         )}
         <nav
-          className={`flex shrink-0 items-center text-[0.82rem] font-black md:text-sm ${
-            isHome ? "gap-5 md:gap-8" : "gap-1 md:gap-2"
-          }`}
+          className="site-nav"
           aria-label="Primary navigation"
         >
           {navItems.map((item) => {
@@ -54,9 +46,9 @@ export function SiteHeader() {
                 href={item.href}
                 className={
                   isHome
-                    ? "py-2 transition-colors hover:text-signal-red"
-                    : `border border-line px-2.5 py-2 transition-colors hover:bg-ink hover:text-paper md:px-4 ${
-                        active ? "bg-ink text-paper" : "bg-paper"
+                    ? "site-nav-link site-nav-link--home"
+                    : `site-nav-link site-nav-link--boxed ${
+                        active ? "site-nav-link--active" : ""
                       }`
                 }
                 aria-current={active ? "page" : undefined}

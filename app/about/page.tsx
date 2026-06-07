@@ -205,20 +205,20 @@ const interests = ["음악", "독서", "미술", "영화", "패션", "글쓰기"
 
 export default function AboutPage() {
   return (
-    <main className="page-shell enter-soft pt-[calc(var(--header-height)+56px)]">
+    <main className="page-shell page-main enter-soft">
       <SectionHeader
         eyebrow="ABOUT"
         title="Kim Anseok / Anseok Kim"
         intro="기술과 인문학, 아날로그와 미래감, 시와 제품 사이에서 사람에 관한 기록을 만든다."
       />
 
-      <section className="mt-12 grid gap-8 border-b border-line pb-12 md:grid-cols-[1.1fr_0.9fr]">
-        <div className="draft-card p-6 md:p-8">
+      <section className="mt-10 grid gap-5 border-b border-line pb-10 md:mt-12 md:grid-cols-[1.1fr_0.9fr] md:gap-8 md:pb-12">
+        <div className="draft-card p-5 md:p-8">
           <CaptionLabel>IDENTITY / SIGNAL</CaptionLabel>
-          <p className="mt-8 text-3xl font-black leading-none md:text-6xl">
+          <p className="mt-7 break-keep text-2xl font-black leading-tight sm:text-3xl md:mt-8 md:text-6xl md:leading-none">
             바이브코더, 예술가, 디자이너, 시인, 기획자, 연설가.
           </p>
-          <p className="mt-6 max-w-2xl text-base leading-8 text-ink-soft">
+          <p className="mt-5 max-w-2xl text-sm leading-7 text-ink-soft sm:text-base sm:leading-8 md:mt-6">
             김안석은 감각을 구조로 바꾸고, 경험을 제품과 문장으로 옮기는
             사람이다. HYPERREAL의 About은 이력서보다 개인 운영체제에 가깝다.
             무엇을 배웠고, 무엇을 좋아하고, 어떤 장면을 지나왔는지 압축해 둔
@@ -226,7 +226,7 @@ export default function AboutPage() {
           </p>
         </div>
 
-        <div className="grid content-start gap-8">
+        <div className="grid content-start gap-5 md:gap-8">
           <ArchivePanel label="NAME">
             <p className="text-2xl font-black">김안석</p>
             <p className="mt-1 text-sm font-black text-ink-soft">Anseok Kim</p>
@@ -238,7 +238,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="grid gap-8 border-b border-line py-12 md:grid-cols-[160px_1fr]">
+      <section className="grid gap-5 border-b border-line py-10 md:grid-cols-[160px_1fr] md:gap-8 md:py-12">
         <CaptionLabel>EDUCATION / NOW</CaptionLabel>
         <div className="grid gap-4 md:grid-cols-2">
           {education.map((item) => (
@@ -255,10 +255,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="grid gap-8 border-b border-line py-12 md:grid-cols-[160px_1fr]">
+      <section className="grid gap-5 border-b border-line py-10 md:grid-cols-[160px_1fr] md:gap-8 md:py-12">
         <CaptionLabel>TASTE / MATERIAL</CaptionLabel>
         <div>
-          <p className="max-w-3xl text-2xl font-black leading-snug md:text-4xl">
+          <p className="max-w-3xl break-keep text-xl font-black leading-snug sm:text-2xl md:text-4xl">
             인간다움, 오래된 물성, 본질을 묻는 태도. 그리고 기술이 사람을 더
             사람답게 만들 수 있는지에 대한 질문.
           </p>
@@ -268,7 +268,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="grid gap-8 border-b border-line py-12 md:grid-cols-[160px_1fr]">
+      <section className="grid gap-5 border-b border-line py-10 md:grid-cols-[160px_1fr] md:gap-8 md:py-12">
         <div className="content-start md:sticky md:top-[calc(var(--header-height)+24px)]">
           <CaptionLabel>EXPERIENCE / INDEX</CaptionLabel>
           <div className="mt-8 hidden border-y border-line md:grid">
@@ -300,7 +300,7 @@ export default function AboutPage() {
                 </div>
 
                 <div>
-                  <h2 className="break-keep text-2xl font-black leading-tight">
+                  <h2 className="break-keep text-xl font-black leading-tight sm:text-2xl">
                     {track.title}
                   </h2>
                   <p className="mt-4 break-keep text-sm leading-7 text-ink-soft">
@@ -345,7 +345,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="grid gap-8 border-b border-line py-12 md:grid-cols-[160px_1fr]">
+      <section className="grid gap-5 border-b border-line py-10 md:grid-cols-[160px_1fr] md:gap-8 md:py-12">
         <CaptionLabel>PROJECTS / EARLY WORK</CaptionLabel>
         <div className="grid gap-3">
           {projects.map((project, index) => (
@@ -363,12 +363,12 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="grid gap-8 border-b border-line py-12 md:grid-cols-[160px_1fr]">
+      <section className="grid gap-5 border-b border-line py-10 md:grid-cols-[160px_1fr] md:gap-8 md:py-12">
         <CaptionLabel>AWARDS / PROOF</CaptionLabel>
         <TagCloud items={awards} large />
       </section>
 
-      <section className="grid gap-8 py-12 md:grid-cols-3">
+      <section className="grid gap-5 py-10 md:grid-cols-3 md:gap-8 md:py-12">
         <ArchivePanel label="INTERESTS">
           <TagCloud items={interests} />
         </ArchivePanel>
@@ -391,7 +391,7 @@ function ArchivePanel({
   children: ReactNode;
 }) {
   return (
-    <section className="border border-line p-5">
+    <section className="border border-line p-4 sm:p-5">
       <CaptionLabel>{label}</CaptionLabel>
       <div className="mt-4">{children}</div>
     </section>
@@ -405,7 +405,9 @@ function TagCloud({ items, large = false }: { items: string[]; large?: boolean }
         <span
           key={item}
           className={`border border-line bg-paper-strong font-black ${
-            large ? "px-3 py-2 text-sm md:text-base" : "px-2.5 py-1.5 text-sm"
+            large
+              ? "min-h-10 px-3 py-2 text-sm md:text-base"
+              : "min-h-9 px-2.5 py-1.5 text-sm"
           }`}
         >
           {item}

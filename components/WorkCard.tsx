@@ -10,13 +10,13 @@ type WorkCardProps = {
 
 export function WorkCard({ item }: WorkCardProps) {
   return (
-    <article className="draft-card group flex min-h-[420px] overflow-hidden">
+    <article className="draft-card group flex min-h-[360px] overflow-hidden sm:min-h-[400px]">
       <Link
         href={`/work/${item.slug}`}
         className="flex h-full w-full flex-col"
         aria-label={`${item.title} detail`}
       >
-        <div className="relative aspect-[16/10] overflow-hidden border-b border-line bg-paper">
+        <div className="relative aspect-[16/9] overflow-hidden border-b border-line bg-paper sm:aspect-[16/10]">
           {item.cover ? (
             <Image
               src={item.cover}
@@ -35,23 +35,23 @@ export function WorkCard({ item }: WorkCardProps) {
             </div>
           )}
         </div>
-        <div className="flex flex-1 flex-col p-5">
+        <div className="flex flex-1 flex-col p-4 sm:p-5">
           <CaptionLabel>
             {item.code} / {item.title}
           </CaptionLabel>
-          <h2 className="work-card-title wordmark mt-5 text-2xl leading-none md:text-3xl">
+          <h2 className="work-card-title wordmark mt-4 text-2xl leading-none md:mt-5 md:text-3xl">
             {item.title}
           </h2>
-          <p className="mt-4 line-clamp-3 text-sm leading-7 text-ink-soft">
+          <p className="mt-3 line-clamp-3 text-sm leading-7 text-ink-soft sm:mt-4">
             {item.summary}
           </p>
-          <div className="mt-6 flex flex-wrap gap-2">
+          <div className="mt-5 flex flex-wrap gap-2 sm:mt-6">
             <StatusBadge status={item.status} />
             <span className="border border-line bg-paper px-2.5 py-1 text-xs font-black">
               {item.year}
             </span>
           </div>
-          <div className="mt-auto flex flex-wrap gap-2 pt-6">
+          <div className="mt-auto flex flex-wrap gap-2 pt-5 sm:pt-6">
             {item.tags.slice(0, 4).map((tag) => (
               <span
                 key={tag}

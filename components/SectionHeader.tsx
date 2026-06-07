@@ -14,18 +14,18 @@ export function SectionHeader({
   intro,
 }: SectionHeaderProps) {
   return (
-    <section className="grid gap-8 border-b border-line pb-8 md:grid-cols-[160px_1fr]">
+    <section className="grid gap-5 border-b border-line pb-7 md:grid-cols-[160px_1fr] md:gap-8 md:pb-8">
       <div>
         <CaptionLabel>
           {index} / {eyebrow}
         </CaptionLabel>
       </div>
       <div>
-        <h1 className="detail-title wordmark max-w-4xl text-4xl leading-none md:text-7xl">
+        <h1 className="detail-title responsive-title wordmark max-w-4xl">
           {title}
         </h1>
         {intro ? (
-          <p className="mt-6 max-w-2xl text-base leading-8 text-ink-soft md:text-lg">
+          <p className="fluid-copy mt-5 text-ink-soft md:mt-6">
             {intro}
           </p>
         ) : null}

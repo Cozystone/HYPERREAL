@@ -54,7 +54,7 @@ export default async function WorkPage({ searchParams }: WorkPageProps) {
   });
 
   return (
-    <main className="page-shell enter-soft pt-[calc(var(--header-height)+56px)]">
+    <main className="page-shell page-main enter-soft">
       <SectionHeader
         eyebrow="WORK"
         title="Work Index"
@@ -69,7 +69,7 @@ export default async function WorkPage({ searchParams }: WorkPageProps) {
           resultCount={filtered.length}
         />
       </div>
-      <section className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+      <section className="mt-7 grid gap-4 sm:mt-8 sm:gap-5 md:grid-cols-2 xl:grid-cols-3">
         {filtered.map((item) => (
           <WorkCard key={item.slug} item={item} />
         ))}

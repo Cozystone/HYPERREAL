@@ -40,18 +40,18 @@ export default async function WorkDetailPage({ params }: WorkDetailProps) {
   const liveLink = getLiveLink(item);
 
   return (
-    <main className="page-shell enter-soft pt-[calc(var(--header-height)+56px)]">
+    <main className="page-shell page-main enter-soft">
       <article>
-        <header className="grid gap-8 border-b border-line pb-8 md:grid-cols-[160px_1fr]">
+        <header className="grid gap-5 border-b border-line pb-7 md:grid-cols-[160px_1fr] md:gap-8 md:pb-8">
           <CaptionLabel>{item.code} / DETAIL</CaptionLabel>
           <div>
-            <h1 className="detail-title wordmark max-w-5xl text-4xl leading-none md:text-7xl">
+            <h1 className="detail-title responsive-title wordmark max-w-5xl">
               {item.title}
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-ink-soft">
+            <p className="fluid-copy mt-5 text-ink-soft md:mt-6">
               {item.summary}
             </p>
-            <div className="mt-8 flex flex-wrap gap-2">
+            <div className="mt-6 flex flex-wrap gap-2 md:mt-8">
               <StatusBadge status={item.status} />
               <span className="border border-line px-2.5 py-1 text-xs font-black">
                 {item.period}
@@ -68,9 +68,9 @@ export default async function WorkDetailPage({ params }: WorkDetailProps) {
           </div>
         </header>
 
-        <section className="grid gap-8 border-b border-line py-8 md:grid-cols-[160px_1fr]">
+        <section className="grid gap-5 border-b border-line py-7 md:grid-cols-[160px_1fr] md:gap-8 md:py-8">
           <CaptionLabel>METADATA / STACK</CaptionLabel>
-          <div className="grid gap-5 md:grid-cols-3">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             <MetaBlock label="Role" values={item.role} />
             <MetaBlock label="Tools" values={item.tools} />
             <div>
@@ -101,7 +101,7 @@ export default async function WorkDetailPage({ params }: WorkDetailProps) {
         </section>
 
         {item.cover ? (
-          <section className="border-b border-line py-8">
+          <section className="border-b border-line py-7 md:py-8">
             <div className="relative aspect-[16/10] overflow-hidden border border-line bg-paper">
               <Image
                 src={item.cover}
@@ -117,11 +117,11 @@ export default async function WorkDetailPage({ params }: WorkDetailProps) {
         {liveLink ? (
           <section
             id="live-embed"
-            className="grid scroll-mt-[calc(var(--header-height)+24px)] gap-8 border-b border-line py-8 md:grid-cols-[160px_1fr]"
+            className="grid scroll-mt-[calc(var(--header-height)+24px)] gap-5 border-b border-line py-7 md:grid-cols-[160px_1fr] md:gap-8 md:py-8"
           >
             <CaptionLabel>LIVE / EMBED</CaptionLabel>
             <div className="overflow-hidden border border-line bg-paper-strong">
-              <div className="flex min-h-12 items-center justify-between gap-4 border-b border-line px-3 py-2">
+              <div className="flex min-h-12 items-center justify-between gap-2 border-b border-line px-3 py-2 sm:gap-4">
                 <div
                   aria-hidden="true"
                   className="flex shrink-0 items-center gap-1.5"
@@ -130,7 +130,7 @@ export default async function WorkDetailPage({ params }: WorkDetailProps) {
                   <span className="h-2.5 w-2.5 rounded-full bg-signal-yellow" />
                   <span className="h-2.5 w-2.5 rounded-full bg-signal-blue" />
                 </div>
-                <p className="min-w-0 truncate border border-line bg-paper px-3 py-1 text-xs font-black text-ink-soft">
+                <p className="hidden min-w-0 truncate border border-line bg-paper px-3 py-1 text-xs font-black text-ink-soft sm:block">
                   {liveLink.url}
                 </p>
                 <a
@@ -142,7 +142,7 @@ export default async function WorkDetailPage({ params }: WorkDetailProps) {
                   OPEN
                 </a>
               </div>
-              <div className="relative aspect-[16/10] bg-paper">
+              <div className="relative aspect-[9/12] min-h-[420px] bg-paper sm:aspect-[16/10] sm:min-h-0">
                 <iframe
                   src={liveLink.url}
                   title={`${item.title} live preview`}
@@ -157,7 +157,7 @@ export default async function WorkDetailPage({ params }: WorkDetailProps) {
           </section>
         ) : null}
 
-        <section className="mx-auto max-w-[760px] py-12">
+        <section className="mx-auto max-w-[760px] py-9 md:py-12">
           <div className="prose-hyperreal">
             <MDXRemote source={item.body} components={mdxComponents} />
           </div>

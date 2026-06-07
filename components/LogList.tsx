@@ -13,12 +13,14 @@ export function LogList({ items }: { items: LogItem[] }) {
           >
             <CaptionLabel>{item.date}</CaptionLabel>
             <div>
-              <h2 className="text-xl font-black md:text-2xl">{item.title}</h2>
-              <p className="mt-2 text-sm leading-6 text-ink-soft">
+              <h2 className="break-keep text-xl font-black leading-snug md:text-2xl">
+                {item.title}
+              </h2>
+              <p className="mt-2 text-sm leading-7 text-ink-soft md:leading-6">
                 {item.summary}
               </p>
             </div>
-            <div className="flex flex-wrap gap-2 md:justify-end">
+            <div className="flex flex-wrap gap-2 pt-1 md:justify-end md:pt-0">
               {item.tags.map((tag) => (
                 <span
                   key={tag}

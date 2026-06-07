@@ -30,16 +30,16 @@ export default async function LogDetailPage({ params }: LogDetailProps) {
   if (!item) notFound();
 
   return (
-    <main className="page-shell enter-soft pt-[calc(var(--header-height)+56px)]">
+    <main className="page-shell page-main enter-soft">
       <article className="mx-auto max-w-[760px]">
-        <header className="border-b border-line pb-8">
+        <header className="border-b border-line pb-7 md:pb-8">
           <CaptionLabel>
             LOG / {item.date} / {item.readingTime}
           </CaptionLabel>
-          <h1 className="wordmark mt-6 text-5xl leading-none md:text-7xl">
+          <h1 className="responsive-title wordmark mt-5 md:mt-6">
             {item.title}
           </h1>
-          <p className="mt-6 text-lg leading-8 text-ink-soft">
+          <p className="fluid-copy mt-5 text-ink-soft md:mt-6">
             {item.summary}
           </p>
           <div className="mt-6 flex flex-wrap gap-2">

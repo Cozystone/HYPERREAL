@@ -43,8 +43,8 @@ export function FilterBar({
   const hasActiveFilter = activeStatus !== "all" || activeTags.length > 0;
 
   return (
-    <section className="grid gap-5 border-y border-line py-5 md:grid-cols-[160px_1fr]">
-      <div>
+    <section className="grid gap-4 border-y border-line py-4 md:grid-cols-[160px_1fr] md:gap-5 md:py-5">
+      <div className="flex items-baseline justify-between gap-4 md:block">
         <p className="caption-label">FILTER / INDEX</p>
         <p className="mt-2 text-sm font-black">
           {resultCount} / {totalCount}
@@ -59,7 +59,7 @@ export function FilterBar({
                 key={status.value}
                 href={hrefFor(status.value, activeTags)}
                 aria-current={active ? "page" : undefined}
-                className={`border border-line px-3 py-2 text-sm font-black ${
+                className={`inline-flex min-h-10 items-center border border-line px-3 py-2 text-sm font-black ${
                   active ? "bg-signal-blue text-paper" : "bg-paper hover:bg-ink hover:text-paper"
                 }`}
               >
@@ -70,13 +70,13 @@ export function FilterBar({
           {hasActiveFilter ? (
             <Link
               href="/work"
-              className="border border-line px-3 py-2 text-sm font-black hover:bg-ink hover:text-paper"
+              className="inline-flex min-h-10 items-center border border-line px-3 py-2 text-sm font-black hover:bg-ink hover:text-paper"
             >
               RESET
             </Link>
           ) : null}
         </div>
-        <div className="max-h-44 overflow-y-auto pr-1">
+        <div className="max-h-48 overflow-y-auto pr-1 md:max-h-44">
           <div className="flex flex-wrap gap-2">
             {tags.map((tag) => {
               const active = activeTags.includes(tag);
@@ -84,7 +84,7 @@ export function FilterBar({
                 <Link
                   key={tag}
                   href={hrefFor(activeStatus, toggleTag(activeTags, tag))}
-                  className={`border border-line px-3 py-2 text-sm font-bold ${
+                  className={`inline-flex min-h-10 items-center border border-line px-3 py-2 text-sm font-bold ${
                     active
                       ? "bg-signal-yellow text-ink"
                       : "bg-paper hover:bg-ink hover:text-paper"

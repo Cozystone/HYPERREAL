@@ -2,7 +2,7 @@ import { CaptionLabel } from "@/components/CaptionLabel";
 
 export function SiteFooter() {
   return (
-    <footer className="mt-24 border-t border-line">
+    <footer className="mt-16 border-t border-line md:mt-24">
       <div className="stripe-hazard h-4 w-full" aria-hidden="true" />
       <div className="page-shell grid gap-8 py-8 md:grid-cols-[1fr_auto] md:items-end">
         <div>
@@ -14,13 +14,13 @@ export function SiteFooter() {
         </div>
         <div className="flex flex-wrap gap-2 text-sm font-bold">
           <a
-            className="border border-line px-3 py-2 hover:bg-ink hover:text-paper"
+            className="inline-flex min-h-10 items-center border border-line px-3 py-2 hover:bg-ink hover:text-paper"
             href="mailto:anseokkim@gmail.com"
           >
             EMAIL
           </a>
           <a
-            className="border border-line px-3 py-2 hover:bg-ink hover:text-paper"
+            className="inline-flex min-h-10 items-center border border-line px-3 py-2 hover:bg-ink hover:text-paper"
             href="https://github.com/Cozystone/HYPERREAL"
             target="_blank"
             rel="noreferrer"
