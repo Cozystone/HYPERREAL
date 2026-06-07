@@ -21,7 +21,7 @@ export function SectionHeader({
         </CaptionLabel>
       </div>
       <div>
-        <h1 className="wordmark max-w-4xl text-5xl leading-none md:text-7xl">
+        <h1 className="detail-title wordmark max-w-4xl text-4xl leading-none md:text-7xl">
           {title}
         </h1>
         {intro ? (

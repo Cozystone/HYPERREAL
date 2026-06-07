@@ -39,7 +39,7 @@ export default async function WorkDetailPage({ params }: WorkDetailProps) {
         <header className="grid gap-8 border-b border-line pb-8 md:grid-cols-[160px_1fr]">
           <CaptionLabel>{item.code} / DETAIL</CaptionLabel>
           <div>
-            <h1 className="wordmark max-w-5xl text-5xl leading-none md:text-8xl">
+            <h1 className="detail-title wordmark max-w-5xl text-4xl leading-none md:text-7xl">
               {item.title}
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-ink-soft">
@@ -77,7 +77,11 @@ export default async function WorkDetailPage({ params }: WorkDetailProps) {
                       href={link.url}
                       target="_blank"
                       rel="noreferrer"
-                      className="border border-line px-3 py-2 text-sm font-black hover:bg-ink hover:text-paper"
+                      className={`inline-flex min-h-10 items-center border border-line px-3 py-2 text-sm font-black ${
+                        link.label.toLowerCase() === "live"
+                          ? "bg-ink text-paper hover:bg-signal-red"
+                          : "hover:bg-ink hover:text-paper"
+                      }`}
                     >
                       {link.label}
                     </a>
@@ -92,7 +96,7 @@ export default async function WorkDetailPage({ params }: WorkDetailProps) {
 
         {item.cover ? (
           <section className="border-b border-line py-8">
-            <div className="relative aspect-[16/9] overflow-hidden border border-line bg-paper">
+            <div className="relative aspect-[16/10] overflow-hidden border border-line bg-paper">
               <Image
                 src={item.cover}
                 alt={`${item.title} project cover`}
@@ -148,7 +152,7 @@ function AdjacentLink({
       }`}
     >
       <CaptionLabel>{label}</CaptionLabel>
-      <p className="mt-2 text-lg font-black">
+      <p className="mt-2 text-lg font-black leading-snug">
         {item.code} / {item.title}
       </p>
     </Link>

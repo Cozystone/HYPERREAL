@@ -10,16 +10,20 @@ type WorkCardProps = {
 
 export function WorkCard({ item }: WorkCardProps) {
   return (
-    <article className="draft-card group flex min-h-[420px] flex-col">
-      <Link href={`/work/${item.slug}`} className="flex h-full flex-col">
-        <div className="relative aspect-[16/10] border-b border-line bg-paper">
+    <article className="draft-card group flex min-h-[420px] overflow-hidden">
+      <Link
+        href={`/work/${item.slug}`}
+        className="flex h-full w-full flex-col"
+        aria-label={`${item.title} detail`}
+      >
+        <div className="relative aspect-[16/10] overflow-hidden border-b border-line bg-paper">
           {item.cover ? (
             <Image
               src={item.cover}
               alt={`${item.title} project cover`}
               fill
               sizes="(min-width: 1280px) 25vw, (min-width: 768px) 50vw, 100vw"
-              className="object-cover"
+              className="object-cover transition-transform duration-200 group-hover:scale-[1.02]"
             />
           ) : (
             <div className="absolute inset-0 overflow-hidden">
@@ -35,7 +39,7 @@ export function WorkCard({ item }: WorkCardProps) {
           <CaptionLabel>
             {item.code} / {item.title}
           </CaptionLabel>
-          <h2 className="wordmark mt-5 text-3xl leading-none">
+          <h2 className="work-card-title wordmark mt-5 text-2xl leading-none md:text-3xl">
             {item.title}
           </h2>
           <p className="mt-4 line-clamp-3 text-sm leading-7 text-ink-soft">

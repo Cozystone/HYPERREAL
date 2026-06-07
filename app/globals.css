@@ -80,6 +80,14 @@ a {
   overflow-wrap: normal;
 }
 
+.work-card-title {
+  text-wrap: balance;
+}
+
+.detail-title {
+  text-wrap: balance;
+}
+
 .bg-paper {
   background-color: var(--paper);
 }
@@ -132,21 +140,11 @@ a {
   text-decoration-color: var(--signal-red);
 }
 
-.cover-image {
-  object-fit: cover;
-  object-position: center center;
-}
-
-.cover-stage::after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  width: min(30vw, 420px);
-  height: 112px;
-  background: var(--paper);
-  content: "";
-  pointer-events: none;
+.cover-stage {
+  background-image: url("/images/cover-upscaled.webp");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .stripe-hazard {
@@ -300,13 +298,9 @@ a {
     width: min(100% - 24px, var(--max-page));
   }
 
-  .cover-image {
-    object-position: 46% center;
-  }
-
-  .cover-stage::after {
-    width: 45vw;
-    height: 72px;
+  .cover-stage {
+    background-image: url("/images/cover-mobile-upscaled.webp");
+    background-position: center center;
   }
 }
 

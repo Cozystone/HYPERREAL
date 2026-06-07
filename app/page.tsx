@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { CaptionLabel } from "@/components/CaptionLabel";
 import { LogList } from "@/components/LogList";
@@ -13,16 +12,11 @@ export default function Home() {
 
   return (
     <main className="enter-soft">
-      <section className="cover-stage relative h-[100svh] overflow-hidden border-b border-line bg-paper">
-        <Image
-          src="/images/cover.png"
-          alt="HYPERREAL — Portfolio Cover"
-          fill
-          priority
-          sizes="100vw"
-          className="cover-image"
-        />
-      </section>
+      <section
+        className="cover-stage h-[100svh] border-b border-line bg-paper"
+        role="img"
+        aria-label="HYPERREAL portfolio cover"
+      />
 
       <div className="page-shell mt-14">
         <section className="grid gap-6 border-b border-line pb-10 md:grid-cols-[160px_1fr_auto] md:items-end">

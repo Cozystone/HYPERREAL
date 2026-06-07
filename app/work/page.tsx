@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { FilterBar } from "@/components/FilterBar";
 import { SectionHeader } from "@/components/SectionHeader";
 import { WorkCard } from "@/components/WorkCard";
@@ -58,6 +59,8 @@ export default async function WorkPage({ searchParams }: WorkPageProps) {
           activeStatus={activeStatus}
           activeTags={activeTags}
           tags={tags}
+          totalCount={allWork.length}
+          resultCount={filtered.length}
         />
       </div>
       <section className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -66,9 +69,17 @@ export default async function WorkPage({ searchParams }: WorkPageProps) {
         ))}
       </section>
       {filtered.length === 0 ? (
-        <p className="mt-8 border border-line p-6 text-sm text-ink-soft">
-          현재 조건에 맞는 프로젝트가 없습니다.
-        </p>
+        <div className="mt-8 border border-line p-6">
+          <p className="text-sm text-ink-soft">
+            현재 조건에 맞는 프로젝트가 없습니다.
+          </p>
+          <Link
+            href="/work"
+            className="mt-4 inline-flex border border-line px-3 py-2 text-sm font-black hover:bg-ink hover:text-paper"
+          >
+            RESET FILTER
+          </Link>
+        </div>
       ) : null}
     </main>
   );
