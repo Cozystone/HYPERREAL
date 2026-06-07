@@ -69,7 +69,7 @@ export default async function WorkPage({ searchParams }: WorkPageProps) {
           resultCount={filtered.length}
         />
       </div>
-      <section className="work-grid mt-7 grid gap-4 sm:mt-8 sm:gap-5 md:grid-cols-2 xl:grid-cols-3">
+      <section className="work-grid work-index-grid mt-7 grid gap-4 sm:mt-8 sm:gap-5 md:grid-cols-2 xl:grid-cols-3">
         {filtered.map((item) => (
           <WorkCard key={item.slug} item={item} />
         ))}

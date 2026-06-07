@@ -76,8 +76,8 @@ export function FilterBar({
             </Link>
           ) : null}
         </div>
-        <div className="max-h-48 overflow-y-auto pr-1 md:max-h-44">
-          <div className="flex flex-wrap gap-2">
+        <div className="filter-tags max-h-48 overflow-y-auto pr-1 md:max-h-44">
+          <div className="filter-tag-list flex flex-wrap gap-2">
             {tags.map((tag) => {
               const active = activeTags.includes(tag);
               return (

@@ -16,26 +16,26 @@
 
 @media (min-width: 1440px) {
   :root {
-    --max-page: 1440px;
+    --max-page: 1408px;
   }
 }
 
 @media (min-width: 1680px) {
   :root {
     --header-height: 84px;
-    --max-page: 1600px;
+    --max-page: 1520px;
   }
 }
 
 @media (min-width: 1920px) {
   :root {
-    --max-page: 1800px;
+    --max-page: 1600px;
   }
 }
 
 @media (min-width: 2240px) {
   :root {
-    --max-page: 2040px;
+    --max-page: 1720px;
   }
 }
 
@@ -214,6 +214,10 @@ a {
   align-items: stretch;
 }
 
+.work-index-grid {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
 .work-card-copy {
   font-size: 0.95rem;
   line-height: 1.75;
@@ -221,12 +225,16 @@ a {
 }
 
 @media (min-width: 768px) {
+  .work-index-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .work-card {
     min-height: 420px;
   }
 
   .work-card-title {
-    font-size: 2.15rem;
+    font-size: 2rem;
     line-height: 0.98;
   }
 
@@ -305,8 +313,8 @@ a {
 
 .cover-wordmark-image {
   display: block;
-  width: clamp(24rem, 36vw, 62rem);
-  min-width: 24rem;
+  width: clamp(22rem, 33vw, 56rem);
+  min-width: 22rem;
   height: auto;
   user-select: none;
 }
@@ -316,7 +324,7 @@ a {
   z-index: 1;
   bottom: 0;
   right: 0;
-  width: min(clamp(30rem, 48vw, 82rem), calc(100vw - 1.5rem));
+  width: min(clamp(28rem, 44vw, 74rem), calc(100vw - 1.5rem));
   aspect-ratio: 1978 / 1544;
 }
 
@@ -537,7 +545,7 @@ a {
   }
 
   .responsive-title {
-    font-size: 5.25rem;
+    font-size: 4.9rem;
   }
 
   .fluid-copy {
@@ -554,33 +562,52 @@ a {
     gap: 1.5rem;
   }
 
+  .work-index-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .filter-bar {
     grid-template-columns: 180px 1fr;
     gap: 1.5rem;
-    padding-block: 1.5rem;
+    padding-block: 1.25rem;
   }
 
   .filter-chip {
-    min-height: 2.75rem;
-    padding: 0.65rem 0.9rem;
-    font-size: 0.95rem;
+    min-height: 2.5rem;
+    padding: 0.55rem 0.78rem;
+    font-size: 0.9rem;
+  }
+
+  .filter-tags {
+    max-height: none;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 0.35rem;
+    scrollbar-gutter: stable;
+    -webkit-mask-image: linear-gradient(90deg, #000 0, #000 calc(100% - 4rem), transparent);
+    mask-image: linear-gradient(90deg, #000 0, #000 calc(100% - 4rem), transparent);
+  }
+
+  .filter-tag-list {
+    width: max-content;
+    flex-wrap: nowrap;
   }
 
   .work-card {
-    min-height: 460px;
+    min-height: 440px;
   }
 
   .work-card-body {
-    padding: 1.5rem;
+    padding: 1.35rem;
   }
 
   .work-card-title {
-    font-size: 2.55rem;
-    line-height: 0.96;
+    font-size: 2.25rem;
+    line-height: 0.98;
   }
 
   .work-card-copy {
-    font-size: 1rem;
+    font-size: 0.98rem;
     line-height: 1.8;
   }
 
@@ -592,7 +619,7 @@ a {
 @media (min-width: 1920px) {
   .site-nav {
     gap: 0.9rem;
-    font-size: 1.05rem;
+    font-size: 0.98rem;
   }
 
   .site-header--home .site-nav {
@@ -600,49 +627,53 @@ a {
   }
 
   .responsive-title {
-    font-size: 5.9rem;
+    font-size: 5.25rem;
   }
 
   .fluid-copy {
-    max-width: 56rem;
-    font-size: 1.25rem;
+    max-width: 52rem;
+    font-size: 1.18rem;
   }
 
   .caption-label {
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .work-grid {
-    gap: 2rem;
+    gap: 1.5rem;
+  }
+
+  .work-index-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .filter-bar {
-    grid-template-columns: 210px 1fr;
-    gap: 2rem;
-    padding-block: 1.75rem;
+    grid-template-columns: 190px 1fr;
+    gap: 1.5rem;
+    padding-block: 1.3rem;
   }
 
   .filter-chip {
-    min-height: 3rem;
-    padding: 0.75rem 1rem;
-    font-size: 1.05rem;
+    min-height: 2.625rem;
+    padding: 0.6rem 0.86rem;
+    font-size: 0.95rem;
   }
 
   .work-card {
-    min-height: 540px;
+    min-height: 470px;
   }
 
   .work-card-body {
-    padding: 2rem;
+    padding: 1.45rem;
   }
 
   .work-card-title {
-    font-size: 3rem;
+    font-size: 2.4rem;
   }
 
   .work-card-copy {
-    font-size: 1.125rem;
-    line-height: 1.9;
+    font-size: 1.03rem;
+    line-height: 1.84;
   }
 
   .work-card .text-xs {

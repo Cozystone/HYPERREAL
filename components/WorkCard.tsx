@@ -22,7 +22,7 @@ export function WorkCard({ item }: WorkCardProps) {
               src={item.cover}
               alt={`${item.title} project cover`}
               fill
-              sizes="(min-width: 1536px) 34vw, (min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
+              sizes="(min-width: 1920px) 22vw, (min-width: 1536px) 31vw, (min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
               className="object-cover transition-transform duration-200 group-hover:scale-[1.02]"
             />
           ) : (

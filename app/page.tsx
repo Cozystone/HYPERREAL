@@ -27,7 +27,7 @@ export default function Home() {
             width={1320}
             height={260}
             priority
-            sizes="(max-width: 760px) 88vw, 36vw"
+            sizes="(max-width: 760px) 88vw, 33vw"
             className="cover-wordmark-image"
           />
         </div>
@@ -37,7 +37,7 @@ export default function Home() {
             alt=""
             fill
             priority
-            sizes="(max-width: 760px) 115vw, 64vw"
+            sizes="(max-width: 760px) 115vw, 50vw"
             className="cover-art-image"
           />
         </div>
