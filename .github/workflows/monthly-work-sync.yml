@@ -1,0 +1,57 @@
+name: Monthly work sync
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 1 * *"
+
+permissions:
+  contents: write
+
+jobs:
+  sync-work:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install screenshot browser
+        run: npx playwright install --with-deps chromium
+
+      - name: Sync work from GitHub
+        run: npm run sync:work
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WORK_SYNC_OWNER: Cozystone
+          WORK_SYNC_CREATE_NEW: "true"
+          WORK_SYNC_MAX_NEW: "8"
+          WORK_SYNC_REFRESH_COVERS: "true"
+          WORK_SYNC_SKIP_REPOS: HYPERREAL
+
+      - name: Validate
+        run: |
+          npm run lint
+          npm run build
+
+      - name: Commit changes
+        run: |
+          if [ -z "$(git status --porcelain content/work public/images/work)" ]; then
+            echo "No work updates to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add content/work public/images/work
+          git commit -m "Monthly GitHub work sync"
+          git push
