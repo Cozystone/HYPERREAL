@@ -141,10 +141,41 @@ a {
 }
 
 .cover-stage {
-  background-image: url("/images/cover-upscaled.webp");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: min(88vw, 1760px) auto;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.cover-title-zone {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+
+.cover-wordmark {
+  font-family: var(--font-helvetica);
+  font-size: clamp(4.25rem, 6.8vw, 8rem);
+  font-weight: 900;
+  line-height: 0.85;
+  letter-spacing: 0;
+}
+
+.cover-art-region {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: calc(50% + clamp(7rem, 13vw, 18rem));
+  width: clamp(42rem, 55vw, 88rem);
+  aspect-ratio: 1978 / 1544;
+}
+
+.cover-art-image {
+  object-fit: contain;
+  object-position: left bottom;
+  user-select: none;
 }
 
 .stripe-hazard {
@@ -299,9 +330,22 @@ a {
   }
 
   .cover-stage {
-    background-image: url("/images/cover-mobile-upscaled.webp");
-    background-position: center center;
-    background-size: 92vw auto;
+    min-height: 100svh;
+  }
+
+  .cover-title-zone {
+    align-items: center;
+    padding-bottom: 30svh;
+  }
+
+  .cover-wordmark {
+    font-size: clamp(3rem, 13vw, 4.75rem);
+  }
+
+  .cover-art-region {
+    bottom: 0;
+    left: 6vw;
+    width: 118vw;
   }
 }
 

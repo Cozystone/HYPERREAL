@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { CaptionLabel } from "@/components/CaptionLabel";
 import { LogList } from "@/components/LogList";
 import { PretextLines } from "@/components/PretextLines";
@@ -14,9 +15,24 @@ export default function Home() {
     <main className="enter-soft">
       <section
         className="cover-stage h-[100svh] border-b border-line bg-paper"
-        role="img"
-        aria-label="HYPERREAL portfolio cover"
-      />
+        aria-labelledby="cover-title"
+      >
+        <div className="cover-title-zone">
+          <h1 id="cover-title" className="cover-wordmark">
+            HYPERREAL
+          </h1>
+        </div>
+        <div className="cover-art-region" aria-hidden="true">
+          <Image
+            src="/images/cover-art.webp"
+            alt=""
+            fill
+            priority
+            sizes="(max-width: 760px) 115vw, 58vw"
+            className="cover-art-image"
+          />
+        </div>
+      </section>
 
       <div className="page-shell mt-14">
         <section className="grid gap-6 border-b border-line pb-10 md:grid-cols-[160px_1fr_auto] md:items-end">
