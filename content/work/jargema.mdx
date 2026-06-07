@@ -1,24 +1,26 @@
 ---
-code: "PRJ-003"
+code: "REP-008"
 title: "JARGEMA"
-summary: "전문 용어와 감각적 언어 사이의 간극을 줄이는 지식 카드 실험."
-status: "experiment"
-role: ["기획", "콘텐츠 시스템"]
-period: "2025.08 - 2025.11"
-tags: ["지식", "콘텐츠", "인터페이스"]
-tools: ["MDX", "Design System"]
-featured: true
-date: "2025-11-20"
+summary: "웹캠 얼굴 분석으로 졸음 점수와 공개 피드를 다루는 브라우저 기반 클래스 실험."
+status: "in-progress"
+role: ["제품 설계", "컴퓨터 비전 UI", "PRD 정리"]
+period: "2026.05 업데이트"
+tags: ["Face Mesh", "Drowsiness", "Classroom", "Next.js"]
+tools: ["TypeScript", "Next.js", "MediaPipe", "Prisma"]
+links:
+  - { label: "GitHub", url: "https://github.com/Cozystone/JARGEMA" }
+featured: false
+date: "2026-05-21"
 ---
 
-## 문제 정의
+## 무엇인가
 
-전문 용어는 빠르게 의미를 전달하지만, 처음 접하는 사람에게는 진입 장벽이 된다. JARGEMA는 용어를 단순 번역하지 않고 맥락, 예시, 감각으로 함께 설명하는 카드 시스템이다.
+JARGEMA는 README 기준으로 웹캠 얼굴을 실시간 분석해 졸음 징후를 JDS(JARGEMA Drowsiness Score)로 표시하는 웹앱이다. 사용자가 명시적으로 동의한 경우 스냅샷을 공개 피드에 올릴 수 있다.
 
-## 접근
+## 구현 범위
 
-하나의 개념을 정의, 비유, 사용 장면, 반례로 나누어 기록했다. 카드마다 최소한의 시각 신호를 부여해 학습보다 탐색에 가까운 경험을 만들었다.
+Next.js App Router, MediaPipe Face Mesh, EAR/PERCLOS/깜빡임/MAR/머리 자세 근사값, 반응형 대시보드, 공개 피드, 설정, 쿠키 세션, Kahoot 스타일 클래스 방 코드 생성과 라이브보드가 포함된다.
 
-## 배운 점
+## 포트폴리오 관점
 
-좋은 설명은 긴 문장이 아니라 사용자가 다시 돌아올 수 있는 구조에서 나온다.
+JARGEMA는 감지 기술을 장난스럽고 위험한 사회적 장면으로 옮긴 실험이다. HYPERREAL에서는 동의, 공개성, 점수화가 충돌하는 인터페이스 사례로 기록한다.

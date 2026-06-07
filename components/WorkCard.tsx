@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { CaptionLabel } from "@/components/CaptionLabel";
 import { StatusBadge } from "@/components/StatusBadge";
@@ -11,13 +12,14 @@ export function WorkCard({ item }: WorkCardProps) {
   return (
     <article className="draft-card group flex min-h-[420px] flex-col">
       <Link href={`/work/${item.slug}`} className="flex h-full flex-col">
-        <div className="relative min-h-44 border-b border-line bg-paper">
+        <div className="relative aspect-[16/10] border-b border-line bg-paper">
           {item.cover ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
+            <Image
               src={item.cover}
-              alt=""
-              className="h-full w-full object-cover"
+              alt={`${item.title} project cover`}
+              fill
+              sizes="(min-width: 1280px) 25vw, (min-width: 768px) 50vw, 100vw"
+              className="object-cover"
             />
           ) : (
             <div className="absolute inset-0 overflow-hidden">

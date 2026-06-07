@@ -1,0 +1,28 @@
+---
+code: "REP-007"
+title: "The Eye"
+summary: "WiFi DensePose 기반 사람 추적, RF 맵, 바이탈 사인을 시각화하는 관측 인터페이스."
+status: "experiment"
+role: ["시각화", "대시보드", "센싱 UI"]
+period: "2026.05 업데이트"
+tags: ["WiFi DensePose", "Sensing", "Dashboard", "Three.js"]
+tools: ["JavaScript", "WebSocket", "Three.js", "Vercel"]
+links:
+  - { label: "GitHub", url: "https://github.com/Cozystone/The-Eye" }
+  - { label: "Live", url: "https://the-eye-three.vercel.app" }
+cover: "/images/work/the-eye.png"
+featured: false
+date: "2026-05-22"
+---
+
+## 무엇인가
+
+The Eye는 README에서 WiFi DensePose human tracking system의 모듈형 웹 인터페이스로 설명된다. CSI 신호, 포즈 추정, 실시간 모니터링, RF 맵, 3D signal field를 하나의 관측 UI로 묶는다.
+
+## 구조
+
+`services/`는 API, WebSocket, pose, sensing, health, stream을 나누고, `components/`는 dashboard, sensing, live demo, hardware, settings, pose canvas, gaussian splats 등을 담당한다.
+
+## 포트폴리오 관점
+
+The Eye는 보이지 않는 신호를 공간 인터페이스로 번역하는 프로젝트다. HYPERREAL에서는 센서 데이터, 추론 결과, 운영 상태를 같은 화면 언어로 맞추는 시도에 초점을 둔다.

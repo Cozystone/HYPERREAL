@@ -1,0 +1,26 @@
+---
+code: "REP-005"
+title: "AVS AI Video Studio"
+summary: "웹 폼에서 로컬 ComfyUI 영상 생성을 실행하는 브리지 기반 Next.js 앱."
+status: "in-progress"
+role: ["로컬 브리지", "웹 UI", "배포 설계"]
+period: "2026.05 업데이트"
+tags: ["ComfyUI", "Video", "Bridge", "Local AI"]
+tools: ["JavaScript", "Next.js", "Cloudflare Tunnel"]
+links:
+  - { label: "GitHub", url: "https://github.com/Cozystone/AVS-AI-Video-Studio-" }
+featured: false
+date: "2026-05-28"
+---
+
+## 무엇인가
+
+AVS는 README 기준으로 "웹에서 간단한 폼으로 로컬 ComfyUI 영상 생성을 실행하는 Next.js 앱"이다. `app/`은 Vercel 배포용 웹 UI, `bridge/`는 PC에서 실행되는 ComfyUI 브리지, `bridge/workflows/*.local.json`은 실제 API 워크플로우 템플릿을 맡는다.
+
+## 구조
+
+브리지 API 키와 ComfyUI URL은 로컬에 두고, 외부 접속이 필요하면 Cloudflare Tunnel을 통해 HTTPS 주소를 웹 UI에 연결한다. 텍스트-비디오, 이미지-비디오, 캐릭터 워크플로우를 API 포맷 JSON으로 관리한다.
+
+## 포트폴리오 관점
+
+AVS는 로컬 생성 도구를 웹 제품처럼 다루는 실험이다. HYPERREAL에서는 "로컬 모델과 퍼블릭 UI 사이의 안전한 연결"이라는 운영 설계가 핵심이다.

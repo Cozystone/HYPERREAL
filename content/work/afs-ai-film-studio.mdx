@@ -1,0 +1,28 @@
+---
+code: "REP-004"
+title: "AFS AI Film Studio"
+summary: "스크립트를 편집 가능한 영화 구조와 프리뷰 타임라인으로 바꾸는 로컬 우선 AI 영상 제작 시스템."
+status: "in-progress"
+role: ["제품 설계", "AI 파이프라인", "웹 UI"]
+period: "2026.05 업데이트"
+tags: ["AI Film", "Local First", "Video", "Pipeline"]
+tools: ["Python", "Next.js", "Vercel", "Cloudflare Tunnel"]
+links:
+  - { label: "GitHub", url: "https://github.com/Cozystone/AFS-AI-Film-Studio-" }
+  - { label: "Live", url: "https://afs-ai-film-studio.vercel.app" }
+cover: "/images/work/afs-ai-film-studio.png"
+featured: true
+date: "2026-05-29"
+---
+
+## 무엇인가
+
+AFS는 README에서 "local-first cinematic audio-video generation system"으로 정의된다. MVP는 스크립트를 컷과 영화 구조로 나누고, 실제 모델 어댑터가 붙기 전에도 mock video/audio renderer로 전체 파이프라인을 검증한다.
+
+## 구조
+
+웹 UI는 Vercel에 올릴 수 있지만, 로컬 오케스트레이터와 GPU 서비스는 사용자 PC에 남기는 방향이다. 필요할 때 Cloudflare Tunnel로 신뢰된 외부 테스터에게만 연결하는 배포 구조를 택한다.
+
+## 포트폴리오 관점
+
+AFS는 단순 생성 버튼이 아니라 제작 타임라인, 컷 상태, 렌더 옵션, 오케스트레이터 연결을 함께 다루는 제작 시스템이다. HYPERREAL에서는 AI 도구를 "창작 파이프라인의 운영체계"로 만든 사례로 배치한다.

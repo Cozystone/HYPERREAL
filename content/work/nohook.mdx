@@ -1,24 +1,28 @@
 ---
-code: "PRJ-004"
-title: "NOHOOK"
-summary: "중독적 후킹 대신 조용한 반복 사용성을 목표로 한 제품 원칙 모음."
-status: "experiment"
-role: ["원칙 설계", "리서치"]
-period: "2025.05 - 2025.07"
-tags: ["윤리", "UX", "리서치"]
-tools: ["Writing", "User Interview"]
+code: "REP-009"
+title: "Nohook"
+summary: "베트남 관광지의 거리 단위 호객·바가지 위험을 지도와 가격 정보로 보여주는 여행 안전 MVP."
+status: "in-progress"
+role: ["PRD", "제품 설계", "지도 UI"]
+period: "2026.05 업데이트"
+tags: ["Travel Safety", "Map", "Risk", "Vietnam"]
+tools: ["TypeScript", "Next.js", "Vercel"]
+links:
+  - { label: "GitHub", url: "https://github.com/Cozystone/Nohook" }
+  - { label: "Live", url: "https://nohook-app.vercel.app" }
+cover: "/images/work/nohook.png"
 featured: true
-date: "2025-07-08"
+date: "2026-05-12"
 ---
 
-## 문제 정의
+## 무엇인가
 
-사용자를 계속 붙잡아 두는 제품 언어는 너무 익숙해졌다. NOHOOK는 반대로 사용자가 자기 리듬을 유지하면서 필요한 순간에만 돌아올 수 있는 인터페이스 원칙을 정리한다.
+Nohook PRD는 제품을 "외국인 관광객이 베트남의 특정 거리에서 호객행위, 바가지요금, 불법 운송 접근, 강매 위험이 높은지 지도 위에서 즉시 확인할 수 있게 해주는 웹 기반 위험도 지도 서비스"로 정의한다.
 
-## 접근
+## 문제
 
-알림, 피드, 추천, 상태 배지를 각각 다시 검토했다. 모든 신호는 사용자의 시간을 빼앗는 장치가 아니라 판단을 줄이는 장치여야 한다는 기준을 세웠다.
+기존 지도/리뷰 서비스는 장소 평점에는 강하지만, "이 길을 지금 걸어도 되는가" 같은 거리 단위 판단에는 약하다. Nohook는 위험 도로 색상, 상세 패널, 신고 흐름, 운영자 검수 구조를 MVP 기준으로 둔다.
 
-## 만든 것
+## 포트폴리오 관점
 
-짧은 원칙 문장, 금지 패턴, 대체 인터랙션 예시를 하나의 가이드 형태로 정리했다.
+Nohook는 여행의 불확실성을 지도 레이어와 가격 범위로 낮추는 서비스다. HYPERREAL에서는 장소 리뷰를 "거리 단위 안전 판단"으로 재구성한 사례로 배치한다.

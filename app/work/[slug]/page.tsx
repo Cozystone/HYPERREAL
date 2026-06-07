@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
@@ -88,6 +89,20 @@ export default async function WorkDetailPage({ params }: WorkDetailProps) {
             </div>
           </div>
         </section>
+
+        {item.cover ? (
+          <section className="border-b border-line py-8">
+            <div className="relative aspect-[16/9] overflow-hidden border border-line bg-paper">
+              <Image
+                src={item.cover}
+                alt={`${item.title} project cover`}
+                fill
+                sizes="(min-width: 1280px) 1280px, 100vw"
+                className="object-cover"
+              />
+            </div>
+          </section>
+        ) : null}
 
         <section className="mx-auto max-w-[760px] py-12">
           <div className="prose-hyperreal">

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { CaptionLabel } from "@/components/CaptionLabel";
 import { LogList } from "@/components/LogList";
+import { PretextLines } from "@/components/PretextLines";
 import { SectionHeader } from "@/components/SectionHeader";
 import { WorkCard } from "@/components/WorkCard";
 import { getAllLogs, getFeaturedWork } from "@/lib/content";
@@ -12,7 +13,7 @@ export default function Home() {
 
   return (
     <main className="enter-soft">
-      <section className="relative h-[100svh] overflow-hidden border-b border-line bg-paper">
+      <section className="cover-stage relative h-[100svh] overflow-hidden border-b border-line bg-paper">
         <Image
           src="/images/cover.png"
           alt="HYPERREAL — Portfolio Cover"
@@ -26,9 +27,10 @@ export default function Home() {
       <div className="page-shell mt-14">
         <section className="grid gap-6 border-b border-line pb-10 md:grid-cols-[160px_1fr_auto] md:items-end">
           <CaptionLabel>01 / STATEMENT</CaptionLabel>
-          <h1 className="wordmark max-w-4xl text-4xl leading-none md:text-7xl">
-            Maker & Founder. 만들고 기록한다.
-          </h1>
+          <PretextLines
+            text="Maker & Founder. 만들고 기록한다."
+            className="wordmark max-w-4xl text-4xl leading-none md:text-7xl"
+          />
           <Link
             href="/work"
             className="w-fit border border-line bg-ink px-4 py-3 text-sm font-black text-paper hover:bg-signal-red"
