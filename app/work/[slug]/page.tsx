@@ -115,7 +115,10 @@ export default async function WorkDetailPage({ params }: WorkDetailProps) {
         ) : null}
 
         {liveLink ? (
-          <section className="grid gap-8 border-b border-line py-8 md:grid-cols-[160px_1fr]">
+          <section
+            id="live-embed"
+            className="grid scroll-mt-[calc(var(--header-height)+24px)] gap-8 border-b border-line py-8 md:grid-cols-[160px_1fr]"
+          >
             <CaptionLabel>LIVE / EMBED</CaptionLabel>
             <div className="overflow-hidden border border-line bg-paper-strong">
               <div className="flex min-h-12 items-center justify-between gap-4 border-b border-line px-3 py-2">
@@ -143,9 +146,8 @@ export default async function WorkDetailPage({ params }: WorkDetailProps) {
                 <iframe
                   src={liveLink.url}
                   title={`${item.title} live preview`}
-                  loading="lazy"
+                  loading="eager"
                   referrerPolicy="no-referrer-when-downgrade"
-                  sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
                   allowFullScreen
                   className="h-full w-full border-0"

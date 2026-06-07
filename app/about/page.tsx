@@ -44,52 +44,105 @@ const tastes = [
   "사람에 관련된 모든 것",
 ];
 
-const experienceGroups = [
+const experienceSignals = [
+  { value: "300+", label: "Poems" },
+  { value: "2026", label: "NCS / Now" },
+  { value: "300+", label: "Startup Team" },
+  { value: "14", label: "Countries" },
+];
+
+const experienceTracks = [
   {
-    title: "Arts / Sound",
-    items: [
-      "바이올린, 클라리넷, 우쿨렐레, 리코더, 단소 등 악기 연주",
-      "보컬, 작곡, 그림을 포함한 예술 활동",
-      "중고등학교 교내축제 보컬 및 오케스트라 부문 참가",
-      "서울 학생필하모닉오케스트라 지원 경험",
-    ],
-  },
-  {
-    title: "Writing / Critique",
-    items: [
+    code: "E-01",
+    scope: "Writing / Human",
+    title: "사람을 문장으로 오래 보관하는 일",
+    summary:
+      "시, 소설, 비평, 계정 운영을 통해 감정과 관계의 결을 관찰하고 구조화한다.",
+    proof: [
       "시 300편 이상 작성",
+      "소설 『모범생』 집필 및 구조 설계",
+      "독립영화 시청과 비평 기록",
       "글쓰기 대회 다수 참여 및 수상",
-      "독립영화 등 영화 시청과 비평",
-      "계정 운영을 통한 문장, 감정, 관심사 기록",
     ],
   },
   {
-    title: "School / Community",
-    items: [
-      "초등학교 전교부회장",
-      "중학교 전과목 A",
-      "중학교 방송부 활동",
-      "고등학교 과학기술정보통신부 동아리 활동",
-      "중학교 미술전시 출품",
+    code: "E-02",
+    scope: "Product / Startup",
+    title: "문학 SNS에서 공교육 AI까지",
+    summary:
+      "문학, 청소년 네트워크, 심리상담, 진로 설계를 제품 언어로 바꾸는 프로젝트들을 이어 왔다.",
+    proof: [
+      "SINABRO: 문학인을 위한 SNS, 학생창업유망팀 300+ 도약트랙 선정",
+      "WETHUS: 청소년 학생주도 프로젝트 플랫폼",
+      "BELIFE / LIFENET: 개인화 분석과 진로 네트워킹 피벗",
+      "Withyou+: 전략기획 및 유저플로우 담당",
     ],
   },
   {
-    title: "Learning / Field",
-    items: [
-      "조향학 공부 및 실험",
+    code: "E-03",
+    scope: "Research / Security",
+    title: "AI 서비스의 데이터 윤리를 점검하는 시선",
+    summary:
+      "Inflexus AI에서는 업무 로그, RAG 권한, 개인정보, 보안 리스크를 분석하며 제품의 보이지 않는 층을 다뤘다.",
+    proof: [
+      "INPLEXUS AI 보안 분석 보고서 작성",
+      "역할 기반 접근권한, 로그, 토큰, AI 데이터 보존 리스크 검토",
+      "경쟁사/레퍼런스 서비스 보안 흐름 비교",
+      "AI 데이터 거버넌스와 인증 전략 제안",
+    ],
+  },
+  {
+    code: "E-04",
+    scope: "Stage / Voice",
+    title: "보이지 않던 행복을 보는 방법",
+    summary:
+      "무대와 발표를 통해 개인적 경험을 공적인 언어로 바꾸고, 듣는 사람에게 남는 문장으로 압축한다.",
+    href: "https://youtu.be/soi0wcKx2kI?si=xsKfFlZi2SGvEibw",
+    hrefLabel: "세바시 발표 영상",
+    proof: [
+      "세바시 청소년캠프 8기 수료생 발표",
+      "중고등학교 교내축제 보컬 및 오케스트라 부문 참가",
+      "하나고등학교 지원 및 면접 경험",
+      "대전시 창업컨퍼런스 오퍼레이터 참여",
+    ],
+  },
+  {
+    code: "E-05",
+    scope: "Art / Sound",
+    title: "손과 귀로 만든 감각의 레이어",
+    summary:
+      "악기, 보컬, 그림, 작곡, 조향, 영화와 패션을 한 사람의 취향 체계 안에서 연결한다.",
+    proof: [
+      "바이올린, 클라리넷, 우쿨렐레, 리코더, 단소 등 악기 연주",
+      "Moscato d'Asti 크리에이티브 크루 기획 및 비주얼 디렉션",
+      "무진장 AI 영상광고제 기획과 제작 흐름 참여",
+      "연작 「박제」 Highschool 및 유화 사계 기획",
+    ],
+  },
+  {
+    code: "E-06",
+    scope: "Learning / Field",
+    title: "과학, 유산, 천문, 학교 밖의 현장",
+    summary:
+      "제도 안팎의 학습 경험을 축적하며 관찰, 설명, 운영, 탐구의 감각을 넓혀 왔다.",
+    proof: [
+      "2026 한국 뇌캠프 수료",
       "하남어린이천문대 수료",
       "경복궁 문화유산해설사 취득",
-      "하나고등학교 지원 및 면접",
-      "Besir 해커톤 참여",
-      "세바시 청소년캠프 참여 및 발표",
-      "2023년도 송파구 장학생 선정",
+      "Besir 해커톤 참여 및 2023 송파구 장학생 선정",
     ],
   },
   {
-    title: "Human Data",
-    items: [
-      "이별, 관계, 정서의 흔적을 글과 기획의 재료로 보관",
-      "사람을 관찰하고, 말과 태도와 기억이 남기는 결을 기록",
+    code: "E-07",
+    scope: "School / Community",
+    title: "작은 조직 안에서 배운 운영 감각",
+    summary:
+      "학교와 커뮤니티 안에서 말하고, 정리하고, 이끌고, 기록하는 역할을 반복해 왔다.",
+    proof: [
+      "초등학교 전교부회장",
+      "중학교 전과목 A 및 방송부 활동",
+      "고등학교 과학기술정보통신부 동아리 활동",
+      "중학교 미술전시 출품",
     ],
   },
 ];
@@ -216,15 +269,79 @@ export default function AboutPage() {
       </section>
 
       <section className="grid gap-8 border-b border-line py-12 md:grid-cols-[160px_1fr]">
-        <CaptionLabel>EXPERIENCE / INDEX</CaptionLabel>
-        <div className="grid gap-5 md:grid-cols-2">
-          {experienceGroups.map((group) => (
-            <ArchiveList
-              key={group.title}
-              title={group.title}
-              items={group.items}
-            />
-          ))}
+        <div className="content-start md:sticky md:top-[calc(var(--header-height)+24px)]">
+          <CaptionLabel>EXPERIENCE / INDEX</CaptionLabel>
+          <div className="mt-8 hidden border-y border-line md:grid">
+            {experienceSignals.map((signal) => (
+              <div
+                key={signal.label}
+                className="grid grid-cols-[1fr_64px] items-baseline border-b border-line py-3 last:border-b-0"
+              >
+                <p className="caption-label">{signal.label}</p>
+                <p className="text-right text-xl font-black">
+                  {signal.value}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div>
+          <div className="border-y border-line">
+            {experienceTracks.map((track) => (
+              <article
+                key={track.code}
+                className="grid gap-5 border-b border-line py-6 last:border-b-0 md:grid-cols-[72px_minmax(210px,0.46fr)_1fr]"
+              >
+                <div className="flex items-baseline justify-between gap-4 md:block">
+                  <p className="text-sm font-black text-signal-red">
+                    {track.code}
+                  </p>
+                  <p className="caption-label mt-0 md:mt-3">{track.scope}</p>
+                </div>
+
+                <div>
+                  <h2 className="break-keep text-2xl font-black leading-tight">
+                    {track.title}
+                  </h2>
+                  <p className="mt-4 break-keep text-sm leading-7 text-ink-soft">
+                    {track.summary}
+                  </p>
+                  {track.href ? (
+                    <a
+                      href={track.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mt-5 inline-flex min-h-9 items-center border border-line bg-ink px-3 py-2 text-xs font-black text-paper hover:bg-signal-red"
+                    >
+                      {track.hrefLabel}
+                    </a>
+                  ) : null}
+                </div>
+
+                <ul className="grid content-start gap-0 border-t border-line md:border-t-0">
+                  {track.proof.map((item, index) => (
+                    <li
+                      key={item}
+                      className="grid grid-cols-[52px_1fr] gap-4 border-b border-line py-3 text-sm leading-6 last:border-b-0 md:grid-cols-[64px_1fr]"
+                    >
+                      <span className="caption-label">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <span className="break-keep">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-6 grid gap-4 border border-line bg-paper-strong p-4 md:grid-cols-[160px_1fr]">
+            <CaptionLabel>READING / SOURCE</CaptionLabel>
+            <p className="text-sm leading-7 text-ink-soft">
+              Drive 문서, 2026 프로젝트 스프레드시트, 세바시 발표 영상, 프로젝트
+              라이브 UI를 기준으로 정리한 경험 인덱스.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -277,22 +394,6 @@ function ArchivePanel({
     <section className="border border-line p-5">
       <CaptionLabel>{label}</CaptionLabel>
       <div className="mt-4">{children}</div>
-    </section>
-  );
-}
-
-function ArchiveList({ title, items }: { title: string; items: string[] }) {
-  return (
-    <section className="draft-card p-5">
-      <CaptionLabel>{title}</CaptionLabel>
-      <ul className="mt-5 grid gap-3">
-        {items.map((item) => (
-          <li key={item} className="grid grid-cols-[12px_1fr] gap-3 text-sm leading-7">
-            <span className="mt-3 h-1.5 w-1.5 bg-signal-red" aria-hidden="true" />
-            <span>{item}</span>
-          </li>
-        ))}
-      </ul>
     </section>
   );
 }
