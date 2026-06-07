@@ -24,7 +24,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://hyperreal.vercel.app"),
+  metadataBase: new URL("https://hyperreal-iota.vercel.app"),
   title: {
     default: "HYPERREAL",
     template: "%s / HYPERREAL",
