@@ -12,7 +12,7 @@ export default function Home() {
 
   return (
     <main className="enter-soft">
-      <section className="relative h-[calc(100svh-20px)] min-h-[620px] overflow-hidden border-b border-line bg-paper md:min-h-[720px]">
+      <section className="relative h-[100svh] overflow-hidden border-b border-line bg-paper">
         <Image
           src="/images/cover.png"
           alt="HYPERREAL — Portfolio Cover"
