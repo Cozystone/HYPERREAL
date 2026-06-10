@@ -24,7 +24,7 @@ const screenshotTimeoutMs = Number.parseInt(
 );
 const token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
 
-const defaultSkipRepos = new Set(["hyperreal"]);
+const defaultSkipRepos = new Set(["hyperreal", "aemini"]);
 const envSkipRepos = new Set(
   (process.env.WORK_SYNC_SKIP_REPOS || "")
     .split(",")
